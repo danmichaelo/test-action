@@ -1,0 +1,13 @@
+name: test
+on:
+  push:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            const res = await exec.exec('echo', ['*'])
+            console.log(res)
